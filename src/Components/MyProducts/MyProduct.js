@@ -1,3 +1,5 @@
+import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './MyProduct.css';
 const MyProduct = (props) => {
@@ -6,7 +8,7 @@ const MyProduct = (props) => {
     }
 
     const { name, img, price, id } = props.product
-    console.log(img);
+    // console.log(img);
     return (
         <div>
             <div className="row gx-4 gy-2 m-3">
@@ -17,7 +19,10 @@ const MyProduct = (props) => {
                             <h3 className='card-title'>{name}</h3>
                             <h4 className='card-text'>Price: {price}</h4>
                             <p className='card-text'>ID: {id}</p>
-                            <button className='border-0 rounded px-3 py-1 text-white cartBtn'>Add to Cart</button>
+                            <button onClick={() => props.clickAddToCart(props.product)} className='border-0 rounded px-3 py-1 text-white cartBtn d-flex'>
+                                <p>Add to Cart</p>
+                                <FontAwesomeIcon icon={faCartArrowDown}></FontAwesomeIcon>
+                            </button>
                         </div>
                     </div>
                 </div>
