@@ -1,4 +1,6 @@
 import React from 'react';
+import MyCart from '../MyCart/MyCart';
+import MyProduct from '../MyProducts/MyProduct';
 import './MyStore.css'
 const MyStore = () => {
     return (
@@ -15,17 +17,10 @@ const MyStore = () => {
             <main>
                 <div className='row'>
                     <div className="product col-9 border">
-                        <h2>Products to be shown</h2>
-                        <div className="row">
-                            <div className="col-md-4 col-sm-12">something</div>
-                            <div className="col-md-4 col-sm-12">something</div>
-                            <div className="col-md-4 col-sm-12">something</div>
-                            <div className="col-md-4 col-sm-12">something</div>
-                            <div className="col-md-4 col-sm-12">something</div>
-                        </div>
+                        <MyProduct></MyProduct>
                     </div>
                     <div className="cart col-3 border">
-                        <h2>Cart will be stored here</h2>
+                        <MyCart></MyCart>
                     </div>
                 </div>
             </main>

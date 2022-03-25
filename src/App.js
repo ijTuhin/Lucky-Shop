@@ -3,7 +3,7 @@ import MyStore from './Components/MyStore/MyStore';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MyStore></MyStore>
     </div>
   );
