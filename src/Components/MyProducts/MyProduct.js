@@ -1,13 +1,12 @@
 import React from 'react';
 import './MyProduct.css';
-import logo from '../../img/img.png';
 const MyProduct = (props) => {
     const cardStyle = {
         width: '18rem'
     }
 
     const { name, img, price, id } = props.product
-
+    console.log(img);
     return (
         <div>
             <div className="row gx-4 gy-2 m-3">
