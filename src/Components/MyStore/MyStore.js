@@ -3,7 +3,14 @@ import './MyStore.css'
 const MyStore = () => {
     return (
         <div>
-            <h3>Getting started</h3>
+            <nav className='header'>
+                <div className='navbar'>
+                    <a href="/home">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/product">Product</a>
+                    <a href="/more">More</a>
+                </div>
+            </nav>
         </div>
     );
 };

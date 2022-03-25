@@ -1,0 +1,23 @@
+.header{
+    background-color: rgb(114, 144, 158);
+    padding: 15px 0;
+}
+.navbar{
+    margin: 0 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.navbar a{
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+    margin-right: 7px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(172, 192, 196);;
+}
+.navbar a:hover{
+    background-color: gray;
+    color: white;
+}
