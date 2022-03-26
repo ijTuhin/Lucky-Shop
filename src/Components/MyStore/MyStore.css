@@ -21,3 +21,20 @@
     background-color: gray;
     color: white;
 }
+.shop{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    margin: 50px 50px;
+}
+
+.cart{
+    margin: 10px;
+    /* position: sticky;
+    background-color: aquamarine;
+    top: 0; */
+}

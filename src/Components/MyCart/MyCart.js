@@ -1,12 +1,20 @@
 import React from 'react';
 import './MyCart.css'
-const MyCart = () => {
+const MyCart = (props) => {
+    const { name, img } = props.myCart;
+    // let cartItemName = [];
+    // for (const product of myCart) {
+    //     var item = product.name;
+    //     var img = product.img;
+    //     cartItemName.push(item)
+    // }
+    console.log(name, img);
     return (
         <div>
-            <h2>Cart will be stored here</h2>
-            <p></p>
-            <button className='px-4 rounded my-2'>Choose 1 for me</button><br />
-            <button className='px-4 rounded'>Choose again</button>
+
+            <p>{name}</p>
+            {/* <p>{cartItemName}</p> */}
+
         </div>
     );
 };
