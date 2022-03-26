@@ -1,3 +1,15 @@
 .cartBtn{
-    background-color: cadetblue;   
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;   
+}
+.cartBtn:hover{
+    background-color: orange;
+}
+.cartBtn .btnText{
+    margin-top: 10px;
+    margin-right: 5px;
 }

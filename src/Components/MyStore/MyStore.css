@@ -34,7 +34,7 @@
 
 .cart{
     margin: 10px;
-    /* position: sticky;
-    background-color: aquamarine;
-    top: 0; */
+}
+.cart h4{
+    margin: 20px 10px;
 }
