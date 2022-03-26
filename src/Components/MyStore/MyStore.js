@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MyCart, ChooseRandom } from '../MyCart/MyCart';
+import { MyCart, ChooseRandom, RemoveItems } from '../MyCart/MyCart';
 import MyProduct from '../MyProducts/MyProduct';
 import './MyStore.css'
 const MyStore = () => {
@@ -14,9 +14,12 @@ const MyStore = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+    let newCart = [...carts];
+
     const clickAddToCart = (product) => {
         // Getting data from MyProduct to MyStore
-        let newCart = [...carts];
+
         // selection limit
         if (newCart.indexOf(product) !== -1) {
             alert('Already added!');
@@ -31,11 +34,14 @@ const MyStore = () => {
             }
         }
     }
-    // const chooseRandom = (item) => {
-    //     const random = Math.floor(Math.random() * 5);
+    const removeItems = (item) => {
+        const emptyValue = [];
+        setCart(emptyValue);
+    }
 
-    //     setCart(random);
-    // }
+    const chooseRandom = (item) => {
+        setCart(newCart);
+    }
     return (
         <div>
             <nav className='header'>
@@ -68,10 +74,21 @@ const MyStore = () => {
                                 myCart={cart}
                             ></MyCart>)
                         }
-                        {
-
-                        }
-                        <ChooseRandom myCart={carts}></ChooseRandom>
+                        {/* {
+                            carts.map(cart =>
+                                <ChooseRandom
+                                    myCart={cart[Math.floor(Math.random() * cart.length)]}
+                                    chooseRandom={chooseRandom}
+                                ></ChooseRandom>)
+                        } */}
+                        <ChooseRandom
+                            myCart={carts[Math.floor(Math.random() * carts.length)]}
+                            chooseRandom={chooseRandom}
+                        ></ChooseRandom>
+                        <RemoveItems
+                            myCart={carts}
+                            removeItems={removeItems}
+                        ></RemoveItems>
                     </div>
                 </div>
             </main>
