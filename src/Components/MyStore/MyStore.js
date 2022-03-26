@@ -17,8 +17,12 @@ const MyStore = () => {
     const clickAddToCart = (product) => {
         // Getting data from MyProduct to MyStore
         const newCart = [...carts, product];
-        console.log(newCart);
-        setCart(newCart);
+        if (newCart.length > 4) {
+            alert('cannot select more than 4 item');
+        }
+        else {
+            setCart(newCart);
+        }
     }
 
     return (
