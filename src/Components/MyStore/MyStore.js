@@ -54,7 +54,6 @@ const MyStore = () => {
             <main>
                 <div className='shop'>
                     <div>
-                        <h4>---Products---</h4>
                         <div className="product card-group">
                             {
                                 products.map(product => <MyProduct
