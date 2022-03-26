@@ -2,7 +2,7 @@ import React from 'react';
 import './MyCart.css'
 const MyCart = (props) => {
     const { name, img } = props.myCart;
-    console.log(props);
+
     return (
         <div className='addedItem'>
             <img src={img} alt="" />
@@ -11,4 +11,15 @@ const MyCart = (props) => {
     );
 };
 
-export default MyCart;
+const ChooseRandom = (props) => {
+    console.log(props);
+    // onClick={() => myCart.chooseRandom(myCart)}
+    return (
+        <div className='cartSide'>
+            <button className='px-4 rounded my-2' onClick={() => props.chooseRandom(props.item)}>Choose 1 for me</button><br />
+            <button className='px-4 rounded'>Choose again</button>
+        </div>
+    )
+}
+
+export { MyCart, ChooseRandom };

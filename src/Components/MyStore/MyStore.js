@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MyCart from '../MyCart/MyCart';
+import { MyCart, ChooseRandom } from '../MyCart/MyCart';
 import MyProduct from '../MyProducts/MyProduct';
 import './MyStore.css'
 const MyStore = () => {
@@ -16,15 +16,26 @@ const MyStore = () => {
     }, [])
     const clickAddToCart = (product) => {
         // Getting data from MyProduct to MyStore
-        const newCart = [...carts, product];
-        if (newCart.length > 4) {
-            alert('cannot select more than 4 item');
+        let newCart = [...carts];
+        // selection limit
+        if (newCart.indexOf(product) !== -1) {
+            alert('Already added!');
         }
         else {
-            setCart(newCart);
+            newCart = [...carts, product];
+            if (newCart.length > 4) {
+                alert('cannot select more than 4 item');
+            }
+            else {
+                setCart(newCart);
+            }
         }
     }
+    // const chooseRandom = (item) => {
+    //     const random = Math.floor(Math.random() * 5);
 
+    //     setCart(random);
+    // }
     return (
         <div>
             <nav className='header'>
@@ -57,8 +68,10 @@ const MyStore = () => {
                                 myCart={cart}
                             ></MyCart>)
                         }
-                        <button className='px-4 rounded my-2'>Choose 1 for me</button><br />
-                        <button className='px-4 rounded'>Choose again</button>
+                        {
+
+                        }
+                        <ChooseRandom myCart={carts}></ChooseRandom>
                     </div>
                 </div>
             </main>
