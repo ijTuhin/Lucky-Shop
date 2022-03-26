@@ -13,16 +13,13 @@ const MyCart = (props) => {
 
 const ChooseRandom = (props) => {
     console.log(props);
-    // onClick={() => myCart.chooseRandom(myCart)}
     return (
         <div className='cartSide'>
-            <button className='px-4 rounded my-2' onClick={() => props.chooseRandom(props.item)}>Choose 1 for me</button>
+            <button className='px-4 rounded my-2' onClick={() => props.chooseRandom(props.random)}>Choose 1 for me</button>
         </div>
     )
 }
 const RemoveItems = (props) => {
-    console.log(props);
-    // onClick={() => myCart.chooseRandom(myCart)}
     return (
         <div className='cartSide'>
             <button className='px-4 rounded' onClick={() => props.removeItems(props.item)}>Choose again</button>

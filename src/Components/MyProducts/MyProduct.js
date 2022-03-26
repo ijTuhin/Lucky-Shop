@@ -8,7 +8,6 @@ const MyProduct = (props) => {
     }
 
     const { name, img, price, id } = props.product
-    // console.log(img);
     return (
         <div>
             <div className='card' style={cardStyle}>

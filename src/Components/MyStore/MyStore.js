@@ -7,6 +7,7 @@ const MyStore = () => {
     // To load data
     const [products, setProducts] = useState([]);
     const [carts, setCart] = useState([]);
+    const [random, setRandom] = useState([])
 
     // To fetch data
     useEffect(() => {
@@ -15,11 +16,9 @@ const MyStore = () => {
             .then(data => setProducts(data))
     }, [])
 
+    // Getting data from MyProduct to MyStore
     let newCart = [...carts];
-
     const clickAddToCart = (product) => {
-        // Getting data from MyProduct to MyStore
-
         // selection limit
         if (newCart.indexOf(product) !== -1) {
             alert('Already added!');
@@ -38,9 +37,9 @@ const MyStore = () => {
         const emptyValue = [];
         setCart(emptyValue);
     }
-
-    const chooseRandom = (item) => {
-        setCart(newCart);
+    const chooseRandom = (random) => {
+        const value = carts[Math.floor(Math.random() * carts.length)];
+        setRandom(value);
     }
     return (
         <div>
@@ -74,15 +73,8 @@ const MyStore = () => {
                                 myCart={cart}
                             ></MyCart>)
                         }
-                        {/* {
-                            carts.map(cart =>
-                                <ChooseRandom
-                                    myCart={cart[Math.floor(Math.random() * cart.length)]}
-                                    chooseRandom={chooseRandom}
-                                ></ChooseRandom>)
-                        } */}
                         <ChooseRandom
-                            myCart={carts[Math.floor(Math.random() * carts.length)]}
+                            random={random}
                             chooseRandom={chooseRandom}
                         ></ChooseRandom>
                         <RemoveItems
